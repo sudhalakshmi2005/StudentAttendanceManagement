@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome {{ user }}</h2>
+
+    <!-- 🔹 Show Network Info -->
+    <p><b>Your IP:</b> {{ ip }}</p>
+    <p><b>Your MAC:</b> {{ mac }}</p>
+
+    <!-- 🔹 Status -->
+    <p>{{ ip_status }}</p>
+    <p>{{ device_status }}</p>
+
+    <!-- 🔹 Attendance Button -->
+    <form method="POST">
+        <button class="btn">Mark Attendance</button>
+    </form>
+
+    <!-- 🔹 Result Message -->
+    {% if msg %}
+        <h3 class="msg">{{ msg }}</h3>
+    {% endif %}
+
+    <br>
+    <a href="/admin">Go to Admin Panel</a>
+</div>
+
+</body>
+</html>

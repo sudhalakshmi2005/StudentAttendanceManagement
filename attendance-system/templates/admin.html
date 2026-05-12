@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Admin Dashboard</h2>
+
+    <a href="/download">
+        <button>Download Excel Report</button>
+    </a>
+
+    <br><br>
+
+    <table>
+
+        <tr>
+            <th>Username</th>
+            <th>MAC Address</th>
+            <th>Status</th>
+            <th>Date & Time</th>
+        </tr>
+
+        {% for row in data %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/logout">
+        <button>Logout</button>
+    </a>
+
+</div>
+
+</body>
+</html>
